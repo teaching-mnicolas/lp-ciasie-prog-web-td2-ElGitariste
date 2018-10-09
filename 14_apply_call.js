@@ -6,11 +6,11 @@ describe ("Apply Call", function() {
       this.pb = b;
     }
     let o = {};
-    f.__;       // call apply on f, passing o as this, and [1, 2] as args
-    expect(o.pa).toBe__();
-    expect(o.pa).toEqual(__);
-    expect(o.pb).toBe__();
-    expect(o.pb).toEqual(__);
+    f.call(o,[1,2]);       // call apply on f, passing o as this, and [1, 2] as args
+    expect(o.pa).toBeTruthy();
+    expect(o.pa).toEqual([1,2]);
+    expect(o.pb).toBeUndefined();
+    expect(o.pb).toEqual(undefined);
   });
 
   it ("call can change this", function() {
@@ -20,10 +20,10 @@ describe ("Apply Call", function() {
     }
     let o = {};
     f.__;  // call 'call' on f, passing o as this and 1 and 2 as args
-    expect(o.pa).toBe__();
-    expect(o.pa).toEqual(__);
-    expect(o.pb).toBe__();
-    expect(o.pb).toEqual(__);
+    expect(o.pa).toBeUndefined();
+    expect(o.pa).toEqual();
+    expect(o.pb).toBeUndefined();
+    expect(o.pb).toEqual(undefined);
   });
 
 });
