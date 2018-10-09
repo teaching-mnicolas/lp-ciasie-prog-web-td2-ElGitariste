@@ -34,7 +34,7 @@ describe ("Function Name", function() {
       };
       let h = g;
       g = 1;                // try to test without this line...
-      expect(h()).toEqual(10);  // this line throw an exception, why ?
+      expect(h()).toEqual(10);  // this line throw an exception, why ?  g n'est plus une fonction
     };
     expect(wrapper).toThrow();  // explain why it doesn't work !!!
   });
